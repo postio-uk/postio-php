@@ -1,11 +1,12 @@
-# postio-php — Claude Code working notes
+# postio-php — development notes
 
-PHP SDK for `postio-api`. Mirrors `@postio/core` with idiomatic PHP
-ergonomics. Lives in its own repo because PHP's Composer/Packagist
-toolchain doesn't co-exist with the umbrella's pnpm workspace.
+PHP SDK for the [Postio API](https://postio.co.uk). Mirrors `@postio/core`
+(the JS family's runtime client) with idiomatic PHP ergonomics. Lives
+in its own repo because PHP's Composer/Packagist toolchain doesn't
+co-exist with the JS-family pnpm workspace.
 
 Read [`README.md`](./README.md) for the customer-facing surface; this
-file is the operational guide.
+file is the operational guide for contributors and code agents.
 
 ## Stack
 
@@ -52,7 +53,7 @@ postio-php/
 composer install
 vendor/bin/phpunit                          # offline + live
 vendor/bin/phpunit --testsuite offline       # offline only
-set -a && source ../.env && set +a && vendor/bin/phpunit --testsuite live
+POSTIO_API_KEY_STAGE=pk_... vendor/bin/phpunit --testsuite live
 ```
 
 ## Branch + deploy model
@@ -81,6 +82,3 @@ regenerated.
 
 No publish secret. Packagist is webhook-driven.
 
-## Tone for this repo
-
-Same as the umbrella: terse, casual, status-emoji summaries.
