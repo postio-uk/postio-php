@@ -4,33 +4,25 @@ declare(strict_types=1);
 
 namespace Postio\Model;
 
-/**
- * SPEC DRIFT (2026-05-02): the OpenAPI spec marks every nullable field
- * as `required` with type [string, null], but on invalid input the live
- * API drops them entirely. We default every nullable field to null so
- * customer code doesn't see a parse error on real responses. Also: the
- * spec says `isReachable` is string|null, but the live API returns a
- * bool — we accept either. Reapply this block after any future regen.
- */
 final class PhoneResult
 {
     public function __construct(
         public readonly string $number,
         public readonly bool $isValid,
         public readonly bool $isPossible,
-        public readonly ?string $type = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?string $countryName = null,
-        public readonly ?string $nationalFormat = null,
-        public readonly ?string $internationalFormat = null,
-        public readonly ?string $e164Format = null,
-        public readonly ?string $originalCarrier = null,
-        public readonly ?string $currentCarrier = null,
-        public readonly ?bool $isPorted = null,
-        public readonly bool|string|null $isReachable = null,
-        public readonly ?string $mcc = null,
-        public readonly ?string $mnc = null,
-        public readonly ?string $level = null,
+        public readonly ?string $type,
+        public readonly ?string $countryCode,
+        public readonly ?string $countryName,
+        public readonly ?string $nationalFormat,
+        public readonly ?string $internationalFormat,
+        public readonly ?string $e164Format,
+        public readonly ?string $originalCarrier,
+        public readonly ?string $currentCarrier,
+        public readonly ?bool $isPorted,
+        public readonly ?bool $isReachable,
+        public readonly ?string $mcc,
+        public readonly ?string $mnc,
+        public readonly ?string $level,
         public readonly ?string $lookupError = null,
     ) {}
 
@@ -49,7 +41,7 @@ final class PhoneResult
             originalCarrier: $data['originalCarrier'] ?? null,
             currentCarrier: $data['currentCarrier'] ?? null,
             isPorted: array_key_exists('isPorted', $data) ? ($data['isPorted'] === null ? null : (bool) $data['isPorted']) : null,
-            isReachable: $data['isReachable'] ?? null,
+            isReachable: array_key_exists('isReachable', $data) ? ($data['isReachable'] === null ? null : (bool) $data['isReachable']) : null,
             mcc: $data['mcc'] ?? null,
             mnc: $data['mnc'] ?? null,
             level: $data['level'] ?? null,

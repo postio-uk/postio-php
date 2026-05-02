@@ -6,7 +6,7 @@ follows [SemVer](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.1] — 2026-05-02
+## [0.1.2] — 2026-05-02
 
 ### Changed
 
@@ -14,7 +14,14 @@ follows [SemVer](https://semver.org/).
   postio-api 1.0.3 aligned the spec with the runtime — HLR returns
   boolean.
 - `PhoneResult` nullable fields drop their `= null` defaults. The
-  runtime now always emits explicit nulls for every field.
+  runtime now always emits explicit nulls for every field; the
+  hand-applied SPEC DRIFT block in the constructor is gone.
+
+## [0.1.1] — 2026-05-02
+
+Bookkeeping release — version bump + CLAUDE.md cleanup but the
+PhoneResult constructor changes intended for this release didn't make
+it into the tagged commit. Use **0.1.2** instead.
 
 ## [0.1.0] — 2026-05-02
 
@@ -51,6 +58,7 @@ Initial release. First Postio PHP SDK on Packagist.
   built-in non-readonly int and can't be shadowed by a readonly
   string.
 
-[Unreleased]: https://github.com/postio-uk/postio-php/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/postio-uk/postio-php/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/postio-uk/postio-php/releases/tag/v0.1.2
 [0.1.1]: https://github.com/postio-uk/postio-php/releases/tag/v0.1.1
 [0.1.0]: https://github.com/postio-uk/postio-php/releases/tag/v0.1.0
