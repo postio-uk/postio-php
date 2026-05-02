@@ -1,0 +1,64 @@
+{
+    "name": "postio/postio",
+    "description": "PHP SDK for the Postio API — UK address, email, and phone validation. PAF + Ordnance Survey backed. PSR-18 over Guzzle.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://postio.co.uk",
+    "support": {
+        "docs": "https://postio.co.uk/docs",
+        "issues": "https://github.com/postio-uk/postio-php/issues",
+        "source": "https://github.com/postio-uk/postio-php",
+        "email": "admin@postio.co.uk"
+    },
+    "keywords": [
+        "postio",
+        "uk",
+        "address",
+        "postcode",
+        "validation",
+        "address-validation",
+        "postcode-lookup",
+        "address-lookup",
+        "uk-address",
+        "paf",
+        "royal-mail",
+        "ordnance-survey",
+        "email",
+        "phone",
+        "sdk",
+        "laravel",
+        "symfony"
+    ],
+    "authors": [
+        {
+            "name": "Postio",
+            "email": "admin@postio.co.uk",
+            "homepage": "https://postio.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "friendsofphp/php-cs-fixer": "^3.50",
+        "phpstan/phpstan": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Postio\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Postio\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
