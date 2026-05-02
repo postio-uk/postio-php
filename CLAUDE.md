@@ -66,13 +66,12 @@ POSTIO_API_KEY_STAGE=pk_... vendor/bin/phpunit --testsuite live
 - No release workflow file needed. Packagist is the registry; tags
   are the publish trigger. There's no auth-time secret to manage.
 
-## Spec drift
+## Spec ↔ runtime alignment
 
-`PhoneResult` carries two manual patches (the spec says
-`required` for every nullable field, and types `isReachable` as
-string-only when the API returns bools). Mirror of postio-python's
-patches. CHANGELOG.md notes them. Reapply if PhoneResult is ever
-regenerated.
+As of postio-api 1.0.3 the OpenAPI spec and runtime are aligned —
+`PhoneResult` is a clean mirror of the spec (`isReachable: ?bool`).
+If a future spec change re-introduces drift, prefer fixing it at the
+source (postio-api Zod schemas + handlers) over patching downstream.
 
 ## Secrets the CI needs
 

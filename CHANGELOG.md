@@ -6,6 +6,16 @@ follows [SemVer](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-05-02
+
+### Changed
+
+- `PhoneResult::$isReachable` typed `?bool` (was `bool|string|null`).
+  postio-api 1.0.3 aligned the spec with the runtime — HLR returns
+  boolean.
+- `PhoneResult` nullable fields drop their `= null` defaults. The
+  runtime now always emits explicit nulls for every field.
+
 ## [0.1.0] — 2026-05-02
 
 Initial release. First Postio PHP SDK on Packagist.
@@ -41,5 +51,6 @@ Initial release. First Postio PHP SDK on Packagist.
   built-in non-readonly int and can't be shadowed by a readonly
   string.
 
-[Unreleased]: https://github.com/postio-uk/postio-php/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/postio-uk/postio-php/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/postio-uk/postio-php/releases/tag/v0.1.1
 [0.1.0]: https://github.com/postio-uk/postio-php/releases/tag/v0.1.0
