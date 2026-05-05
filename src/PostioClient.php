@@ -33,7 +33,7 @@ use Postio\Model\ConnectSuccess;
  *
  * Quick start:
  *
- *     $client = new \Postio\PostioClient(apiKey: 'pk_live_...');
+ *     $client = new \Postio\PostioClient(apiKey: 'pk_...');
  *     $result = $client->address->search('downing street');
  *     foreach ($result->results as $hit) {
  *         echo $hit->udprn . ': ' . $hit->suggestion . PHP_EOL;

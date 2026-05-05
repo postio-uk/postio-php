@@ -4,9 +4,11 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/postio/postio.svg)](https://packagist.org/packages/postio/postio)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-PHP SDK for the [Postio API](https://postio.co.uk) — UK address, email, and
-phone validation. Backed by Royal Mail PAF and Ordnance Survey. PSR-18 over
-Guzzle, typed `readonly` value objects.
+PHP SDK for [Postio](https://postio.co.uk) — the UK validation API for
+addresses, emails and phone numbers. PSR-18 over Guzzle, typed `readonly`
+value objects. Backed by Royal Mail PAF and Ordnance Survey.
+
+> **First time?** [Sign up free](https://postio.co.uk) — first 100 lookups on us, no card needed.
 
 ## Install
 
@@ -25,7 +27,7 @@ require 'vendor/autoload.php';
 
 use Postio\PostioClient;
 
-$client = new PostioClient(apiKey: 'pk_live_...');  // or set POSTIO_API_KEY
+$client = new PostioClient(apiKey: 'pk_...');  // or set POSTIO_API_KEY
 
 $result = $client->address->search('downing street');
 foreach ($result->results as $hit) {
@@ -74,7 +76,7 @@ Every exception carries `status`, `errorCode`, `details`, `requestId`, and
 
 ```php
 $client = new PostioClient(
-    apiKey: 'pk_live_...',
+    apiKey: 'pk_...',
     baseUrl: 'https://api.postio.co.uk/v1',  // default
     timeout: 10.0,                            // seconds
     retries: 2,                                // 0 to disable
