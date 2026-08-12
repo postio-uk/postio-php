@@ -41,7 +41,7 @@ use Postio\Model\ConnectSuccess;
  */
 final class PostioClient
 {
-    public const VERSION         = '0.1.2';
+    public const VERSION         = '0.1.3';
     public const DEFAULT_BASE_URL = 'https://api.postio.co.uk/v1';
 
     public readonly AddressResource $address;
